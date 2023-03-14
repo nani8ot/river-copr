@@ -75,13 +75,11 @@ License:        MIT
 
 %build
 %zig_build \
-   -Drelease-safe \
    -Dxwayland
 
 
 %install
 %zig_install \
-   -Drelease-safe \
    -Dxwayland
 install -D -m755 -pv example/init %{buildroot}%{_datadir}/%{name}/init.example
 install -D -m644 -pv %{SOURCE100} %{buildroot}%{_datadir}/wayland-sessions/%{name}.desktop
