@@ -3,7 +3,7 @@
 %undefine  _missing_build_ids_terminate_build
 
 Name:           river
-Version:        0.1.3
+Version:        0.2.4
 Release:        1%{?dist}
 Summary:        Dynamic tiling Wayland compositor
 
@@ -16,14 +16,14 @@ Source1:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz.s
 # Isaac Freund <mail@isaacfreund.com>
 Source2:        https://isaacfreund.com/public_key.txt#/gpgkey-86DED400DDFD7A11.gpg
 
-Source100:      %{name}.desktop
+#Source100:      %{name}.desktop
 
 ExclusiveArch:  %{zig_arches}
 
 BuildRequires:  gcc
 BuildRequires:  gnupg2
 BuildRequires:  scdoc
-BuildRequires:  zig >= 0.9
+BuildRequires:  zig >= 0.10
 BuildRequires:  zig-rpm-macros
 
 BuildRequires:  pkgconfig(libevdev)
@@ -31,7 +31,7 @@ BuildRequires:  pkgconfig(libinput)
 BuildRequires:  pkgconfig(pixman-1)
 BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  pkgconfig(wayland-server)
-BuildRequires:  (pkgconfig(wlroots) >= 0.15.0 with pkgconfig(wlroots) < 0.16)
+BuildRequires:  (pkgconfig(wlroots) >= 0.16.0)
 BuildRequires:  pkgconfig(xkbcommon)
 
 # bundled sources
@@ -75,12 +75,14 @@ License:        MIT
 
 %build
 %zig_build \
+   -Drelease-safe \
    -Dxwayland
 
 
 %install
 %zig_install \
-    -Dxwayland
+   -Drelease-safe \
+   -Dxwayland
 install -D -m755 -pv example/init %{buildroot}%{_datadir}/%{name}/init.example
 install -D -m644 -pv %{SOURCE100} %{buildroot}%{_datadir}/wayland-sessions/%{name}.desktop
 
