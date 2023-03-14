@@ -1,6 +1,6 @@
 # river-copr
 
-## Dependencies
+## Fedora Dependencies
 - zig >= 0.10 (copr:sentry/zig)
 - wayland-devel
 - wayland-protocols-devel
