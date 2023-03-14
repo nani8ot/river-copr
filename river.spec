@@ -17,8 +17,6 @@ Source1:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz.s
 Source2:        https://isaacfreund.com/public_key.txt#/gpgkey-86DED400DDFD7A11.gpg
 
 
-ExclusiveArch:  x86_64
-
 BuildRequires:  gcc
 BuildRequires:  gnupg2
 BuildRequires:  scdoc
