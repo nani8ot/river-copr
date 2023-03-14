@@ -16,7 +16,6 @@ Source1:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz.s
 # Isaac Freund <mail@isaacfreund.com>
 Source2:        https://isaacfreund.com/public_key.txt#/gpgkey-86DED400DDFD7A11.gpg
 
-Source100:      %{name}.desktop
 
 ExclusiveArch:  %{zig_arches}
 
@@ -84,7 +83,6 @@ License:        MIT
 %zig_install \
    -Dxwayland
 install -D -m755 -pv example/init %{buildroot}%{_datadir}/%{name}/init.example
-install -D -m644 -pv %{SOURCE100} %{buildroot}%{_datadir}/wayland-sessions/%{name}.desktop
 
 
 %check
@@ -101,7 +99,6 @@ install -D -m644 -pv %{SOURCE100} %{buildroot}%{_datadir}/wayland-sessions/%{nam
 %{_mandir}/man1/riverctl.1*
 %{_mandir}/man1/rivertile.1*
 %{_datadir}/%{name}/init.example
-%{_datadir}/wayland-sessions/%{name}.desktop
 # shell completions
 %{_datadir}/bash-completion/completions/riverctl
 %dir %{_datadir}/fish
