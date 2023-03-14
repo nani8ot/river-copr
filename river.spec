@@ -26,13 +26,15 @@ BuildRequires:  scdoc
 BuildRequires:  zig >= 0.9
 BuildRequires:  zig-rpm-macros
 
-BuildRequires:  pkgconfig(libevdev)
+BuildRequires:  pkgconfig(libevdev-devel)
 BuildRequires:  pkgconfig(libinput)
-BuildRequires:  pkgconfig(pixman-1)
-BuildRequires:  pkgconfig(wayland-protocols)
-BuildRequires:  pkgconfig(wayland-server)
+BuildRequires:  pkgconfig(pixman-devel)
+BuildRequires:  pkgconfig(wayland-protocols-devel)
+BuildRequires:  pkgconfig(wayland-devel)
 BuildRequires:  (pkgconfig(wlroots) >= 0.16.0)
-BuildRequires:  pkgconfig(xkbcommon)
+BuildRequires:  pkgconfig(wlroots-devel)
+BuildRequires:  pkgconfig(libxkbcommon-devel)
+BuildRequires:  pkgconfig(pkgconf-pkg-config)
 
 # bundled sources
 Provides:       bundled(zig-pixman)
