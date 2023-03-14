@@ -16,7 +16,7 @@ Source1:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz.s
 # Isaac Freund <mail@isaacfreund.com>
 Source2:        https://isaacfreund.com/public_key.txt#/gpgkey-86DED400DDFD7A11.gpg
 
-#Source100:      %{name}.desktop
+Source100:      %{name}.desktop
 
 ExclusiveArch:  %{zig_arches}
 
