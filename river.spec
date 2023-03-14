@@ -23,7 +23,7 @@ ExclusiveArch:  %{zig_arches}
 BuildRequires:  gcc
 BuildRequires:  gnupg2
 BuildRequires:  scdoc
-BuildRequires:  zig >= 0.10
+BuildRequires:  zig >= 0.9
 BuildRequires:  zig-rpm-macros
 
 BuildRequires:  pkgconfig(libevdev)
