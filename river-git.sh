@@ -6,4 +6,5 @@ cd river
 git submodule update --init
 cd ..
 
+mv river river-git
 tar -czf river.tar.gz river-git
