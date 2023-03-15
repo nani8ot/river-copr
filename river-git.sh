@@ -7,4 +7,4 @@ git submodule update --init
 cd ..
 
 mv river river-git
-tar -czf river.tar.gz river-git
+tar -czf river-git.tar.gz river-git
