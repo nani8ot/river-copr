@@ -2,5 +2,5 @@
 Name=River
 Comment=A dynamic tiling wayland compositor
 DesktopNames=river
-Exec=river
+Exec=river-run.sh
 Type=Application
