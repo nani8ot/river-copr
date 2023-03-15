@@ -3,7 +3,7 @@
 %undefine  _missing_build_ids_terminate_build
 
 Name:           river
-Version:        master
+Version:        git
 %define build_timestamp %{lua: print(os.date("%Y%m%d"))}
 Release: %{build_timestamp}
 Summary:        Dynamic tiling Wayland compositor
@@ -12,7 +12,7 @@ Summary:        Dynamic tiling Wayland compositor
 # protocols: ISC, MIT
 License:        GPLv3+ and ISC and MIT
 URL:            https://github.com/riverwm/river
-Source0:        %(url}/archive/master.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 
 Source3:        https://raw.githubusercontent.com/nani8ot/river-copr/main/river.desktop
 Source4:        https://raw.githubusercontent.com/nani8ot/river-copr/main/river-run.sh
