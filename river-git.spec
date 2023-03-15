@@ -115,3 +115,25 @@ install -D -m755 -pv %{SOURCE4} %{buildroot}%{_bindir}/%{name}-run.sh
 %{_datadir}/pkgconfig/river-protocols.pc
 %dir %{_datadir}/river-protocols
 %{_datadir}/river-protocols/*.xml
+
+%changelog
+* Sat Feb 05 2022 Aleksei Bavshin <alebastr@fedoraproject.org> 0.1.3-1
+- Update to 0.1.3
+
+* Wed Feb 02 2022 Aleksei Bavshin <alebastr@fedoraproject.org> 0.1.2-2
+- Preparing for package review
+
+* Fri Dec 31 2021 Aleksei Bavshin <alebastr@fedoraproject.org> 0.1.2-1
+- Update to 0.1.2
+
+* Thu Dec 23 2021 Aleksei Bavshin <alebastr@fedoraproject.org> 0.1.1-1
+- Update to 0.1.1
+
+* Wed Nov 03 2021 Aleksei Bavshin <alebastr@fedoraproject.org> 0.1.0-2
+- Verify source signature
+
+* Wed Nov 03 2021 Aleksei Bavshin <alebastr@fedoraproject.org> 0.1.0-1
+- Update to 0.1.0 release 🎉
+
+* Fri Jun 25 2021 Aleksei Bavshin <alebastr89@gmail.com> 0~20210624git5056394-1
+- Initial package
