@@ -3,15 +3,16 @@
 %undefine  _missing_build_ids_terminate_build
 
 Name:           river
-Version:        0.2.4
-Release:        2%{?dist}
+Version:        master
+%define build_timestamp %{lua: print(os.date("%Y%m%d"))}
+Release: %{build_timestamp}
 Summary:        Dynamic tiling Wayland compositor
 
 # river: GPLv3+
 # protocols: ISC, MIT
 License:        GPLv3+ and ISC and MIT
 URL:            https://github.com/riverwm/river
-Source0:        %{name}
+Source0:        %(url}/archive/master.tar.gz
 
 Source3:        https://raw.githubusercontent.com/nani8ot/river-copr/main/river.desktop
 Source4:        https://raw.githubusercontent.com/nani8ot/river-copr/main/river-run.sh
@@ -44,6 +45,8 @@ Recommends:     mesa-dri-drivers
 Recommends:     polkit
 # Compatibility layer for X11 applications
 Recommends:     xorg-x11-server-Xwayland
+# Necessary for .desktop Exec
+Recommends:     dbus-daemon
 
 %description
 river is a dynamic tiling wayland compositor that takes inspiration
