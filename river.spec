@@ -16,9 +16,8 @@ Source1:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz.s
 # Isaac Freund <mail@isaacfreund.com>
 Source2:        https://isaacfreund.com/public_key.txt#/gpgkey-86DED400DDFD7A11.gpg
 
-Source100:      %{name}.desktop
-
-ExclusiveArch:  %{zig_arches}
+Source3:        https://raw.githubusercontent.com/nani8ot/river-copr/main/river.desktop
+Source4:        https://raw.githubusercontent.com/nani8ot/river-copr/main/river-run.sh
 
 BuildRequires:  gcc
 BuildRequires:  gnupg2
@@ -84,7 +83,8 @@ License:        MIT
 %zig_install \
    -Dxwayland
 install -D -m755 -pv example/init %{buildroot}%{_datadir}/%{name}/init.example
-install -D -m644 -pv %{SOURCE100} %{buildroot}%{_datadir}/wayland-sessions/%{name}.desktop
+install -D -m644 -pv %{SOURCE3} %{buildroot}%{_datadir}/wayland-sessions/%{name}.desktop
+install -D -m755 -pv %{SOURCE4} %{buildroot}%{_bindir}/%{name}-run.sh
 
 
 %check
@@ -97,6 +97,7 @@ install -D -m644 -pv %{SOURCE100} %{buildroot}%{_datadir}/wayland-sessions/%{nam
 %{_bindir}/river
 %{_bindir}/riverctl
 %{_bindir}/rivertile
+%{_bindir}/%{name}-run.sh
 %{_mandir}/man1/river.1*
 %{_mandir}/man1/riverctl.1*
 %{_mandir}/man1/rivertile.1*
